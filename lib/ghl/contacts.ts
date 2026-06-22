@@ -61,12 +61,14 @@ export async function searchContactByToken(token: string): Promise<GHLClient | n
 
 export async function getAllActiveClients(): Promise<GHLClient[]> {
   try {
+    console.log('[GHL] getAllActiveClients — locationId present:', !!process.env.GHL_LOCATION_ID, '— token present:', !!process.env.GHL_PRIVATE_TOKEN)
     const data = await ghlPost('/contacts/search', {
       locationId: process.env.GHL_LOCATION_ID,
       pageLimit: 100,
     })
 
     const contacts: Array<Record<string, unknown>> = data?.contacts ?? []
+    console.log('[GHL] getAllActiveClients — total contacts returned:', contacts.length)
 
     const clients: GHLClient[] = []
 
