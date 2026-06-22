@@ -27,7 +27,7 @@ export default function ScriptsView({ videos, scriptMap }: ScriptsViewProps) {
     if (statusFilter === 'All') return videos
     return videos.filter(v => {
       const script = scriptMap[v.id]
-      return script ? script.status === statusFilter : statusFilter === 'Not Started'
+      return script ? script.status === statusFilter : false
     })
   }, [videos, scriptMap, statusFilter])
 
@@ -206,16 +206,32 @@ export default function ScriptsView({ videos, scriptMap }: ScriptsViewProps) {
                   <hr style={{ border: 'none', borderTop: '1px solid var(--border-subtle)', margin: '0 0 24px' }} />
 
                   {/* Script body */}
-                  <div
-                    style={{
-                      fontSize: 16,
-                      lineHeight: 1.8,
-                      color: 'var(--text-primary)',
-                      whiteSpace: 'pre-wrap',
-                    }}
-                  >
-                    {selectedScript.contentBody}
-                  </div>
+                  {selectedScript.contentBody ? (
+                    <div
+                      style={{
+                        fontSize: 16,
+                        lineHeight: 1.8,
+                        color: 'var(--text-primary)',
+                        whiteSpace: 'pre-wrap',
+                      }}
+                    >
+                      {selectedScript.contentBody}
+                    </div>
+                  ) : (
+                    <div
+                      style={{
+                        background: 'var(--bg-elevated)',
+                        borderRadius: 10,
+                        padding: '24px',
+                        textAlign: 'center',
+                      }}
+                    >
+                      <p style={{ color: 'var(--text-muted)', fontSize: 14, margin: 0 }}>
+                        Script not yet started
+                        {selectedScript.eta ? ` — estimated ${formatShortDate(selectedScript.eta)}` : ''}
+                      </p>
+                    </div>
+                  )}
 
                   {/* Footer */}
                   <div style={{ marginTop: 24, display: 'flex', gap: 16, fontSize: 12, color: 'var(--text-muted)' }}>

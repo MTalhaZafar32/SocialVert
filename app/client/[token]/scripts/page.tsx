@@ -20,6 +20,9 @@ export default async function ScriptsPage({ params }: { params: Promise<{ token:
     scriptMap[script.videoId] = script
   }
 
+  // Only show videos that have a GHL script record — Ideation-stage videos have none
+  const videosWithScripts = videos.filter(v => scriptMap[v.id] !== undefined)
+
   return (
     <PageMotion>
       <div style={{ padding: '32px 24px 0', maxWidth: 1280, margin: '0 auto' }}>
@@ -31,7 +34,7 @@ export default async function ScriptsPage({ params }: { params: Promise<{ token:
             Read and review your content scripts
           </p>
         </div>
-        <ScriptsView videos={videos} scriptMap={scriptMap} />
+        <ScriptsView videos={videosWithScripts} scriptMap={scriptMap} />
       </div>
     </PageMotion>
   )

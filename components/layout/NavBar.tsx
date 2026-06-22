@@ -91,7 +91,7 @@ export default function NavBar() {
         </div>
 
         {/* Desktop nav */}
-        <nav style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="hidden md:flex">
+        <nav style={{ gap: 4, alignItems: 'center' }} className="hidden md:flex">
           {navItems.map(({ label, icon: Icon, href }) => {
             const active = isActive(href)
             return (
@@ -123,7 +123,6 @@ export default function NavBar() {
         <button
           onClick={() => setDrawerOpen(true)}
           style={{
-            display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: 44,
@@ -134,7 +133,7 @@ export default function NavBar() {
             cursor: 'pointer',
             flexShrink: 0,
           }}
-          className="md:hidden"
+          className="flex md:hidden"
           aria-label="Open menu"
         >
           <Menu size={20} />
