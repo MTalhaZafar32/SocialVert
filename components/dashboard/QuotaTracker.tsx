@@ -71,7 +71,7 @@ export default function QuotaTracker({ quota, completed, inProgress, remaining }
           <circle
             cx={SIZE / 2} cy={SIZE / 2} r={R}
             fill="none"
-            stroke="#2D3748"
+            stroke="#E2E8F0"
             strokeWidth={STROKE}
             strokeDasharray={`${CIRC}`}
             strokeLinecap="round"
@@ -81,7 +81,7 @@ export default function QuotaTracker({ quota, completed, inProgress, remaining }
             <circle
               cx={SIZE / 2} cy={SIZE / 2} r={R}
               fill="none"
-              stroke="#4FB3F6"
+              stroke="#3B82F6"
               strokeWidth={STROKE}
               strokeDasharray={a2.dasharray}
               strokeDashoffset={-a2.dashoffset}

@@ -100,7 +100,7 @@ export default function CaptionsView({ videos, captionMap }: CaptionsViewProps) 
                   width: 8,
                   height: 8,
                   borderRadius: '50%',
-                  background: allApproved ? '#10B981' : hasAny ? '#4FB3F6' : '#4A5568',
+                  background: allApproved ? '#10B981' : hasAny ? '#3B82F6' : '#CBD5E1',
                   flexShrink: 0,
                   marginTop: 4,
                 }}
@@ -175,7 +175,7 @@ export default function CaptionsView({ videos, captionMap }: CaptionsViewProps) 
                     </p>
                     <div
                       style={{
-                        background: 'rgba(79,179,246,0.05)',
+                        background: 'var(--blue-50)',
                         borderLeft: '3px solid var(--blue-400)',
                         padding: 16,
                         borderRadius: '0 8px 8px 0',

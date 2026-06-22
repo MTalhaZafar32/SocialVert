@@ -51,28 +51,31 @@ export default function NavBar() {
           height: 64,
           zIndex: 50,
           background: 'var(--glass-bg)',
-          backdropFilter: 'blur(12px)',
-          WebkitBackdropFilter: 'blur(12px)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
           borderBottom: '1px solid var(--glass-border)',
+          boxShadow: '0 1px 0 rgba(0,0,0,0.06)',
           display: 'flex',
           alignItems: 'center',
           padding: '0 24px',
           gap: 16,
         }}
       >
-        {/* Wordmark */}
-        <div
+        {/* Wordmark — links back to directory */}
+        <Link
+          href="/"
           style={{
             fontSize: 18,
             fontWeight: 700,
-            background: 'linear-gradient(90deg, #4FB3F6, #7C5CE8)',
+            background: 'linear-gradient(90deg, #2563EB, #7C3AED)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             flexShrink: 0,
+            textDecoration: 'none',
           }}
         >
           SocialVert
-        </div>
+        </Link>
 
         {/* Company name — center */}
         <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
@@ -155,7 +158,7 @@ export default function NavBar() {
               style={{
                 position: 'fixed',
                 inset: 0,
-                background: 'rgba(0,0,0,0.5)',
+                background: 'rgba(15,23,42,0.4)',
                 zIndex: 60,
               }}
             />
@@ -173,7 +176,8 @@ export default function NavBar() {
                 left: 0,
                 bottom: 0,
                 width: 280,
-                background: 'var(--bg-elevated)',
+                background: 'var(--bg-card)',
+                borderRight: '1px solid var(--border-subtle)',
                 zIndex: 70,
                 padding: '24px 16px',
                 display: 'flex',
@@ -182,17 +186,20 @@ export default function NavBar() {
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-                <span
+                <Link
+                  href="/"
+                  onClick={() => setDrawerOpen(false)}
                   style={{
                     fontSize: 18,
                     fontWeight: 700,
-                    background: 'linear-gradient(90deg, #4FB3F6, #7C5CE8)',
+                    background: 'linear-gradient(90deg, #2563EB, #7C3AED)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
+                    textDecoration: 'none',
                   }}
                 >
                   SocialVert
-                </span>
+                </Link>
                 <button
                   onClick={() => setDrawerOpen(false)}
                   style={{

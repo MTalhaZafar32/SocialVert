@@ -154,7 +154,7 @@ export default function ScheduleCalendar({ schedules, videoMap }: ScheduleCalend
                             borderRadius: 10,
                             padding: 12,
                             minWidth: 200,
-                            boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                            boxShadow: 'var(--shadow-elevated)',
                           }}
                         >
                           <p style={{ margin: '0 0 8px', fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', lineHeight: 1.4 }}>

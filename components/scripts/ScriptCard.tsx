@@ -182,8 +182,8 @@ export default function ScriptsView({ videos, scriptMap }: ScriptsViewProps) {
                   {selectedScript.status === 'Revision Requested' && selectedScript.clientFeedback && (
                     <div
                       style={{
-                        background: 'rgba(245,158,11,0.08)',
-                        border: '1px solid rgba(245,158,11,0.3)',
+                        background: 'var(--status-rescheduled-bg)',
+                        border: '1px solid #FDE68A',
                         borderRadius: 8,
                         padding: 16,
                         marginBottom: 20,

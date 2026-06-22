@@ -14,40 +14,40 @@ export function getStageColor(stage: PipelineStage): string {
 
 export function getStageStatusColors(status: StageStatus): { bg: string; text: string } {
   const map: Record<StageStatus, { bg: string; text: string }> = {
-    'Not Started': { bg: '#1F2937',                    text: '#6B7280' },
-    'In Progress': { bg: 'rgba(30,150,245,0.12)',      text: '#4FB3F6' },
-    'Complete':    { bg: 'rgba(16,185,129,0.12)',      text: '#10B981' },
+    'Not Started': { bg: 'var(--status-not-started-bg)', text: 'var(--status-not-started-text)' },
+    'In Progress': { bg: 'var(--status-in-progress-bg)', text: 'var(--status-in-progress-text)' },
+    'Complete':    { bg: 'var(--status-complete-bg)',    text: 'var(--status-complete-text)'    },
   }
-  return map[status] ?? { bg: '#1F2937', text: '#6B7280' }
+  return map[status] ?? { bg: 'var(--status-not-started-bg)', text: 'var(--status-not-started-text)' }
 }
 
 export function getScriptStatusColors(status: ScriptStatus): { bg: string; text: string } {
   const map: Record<ScriptStatus, { bg: string; text: string }> = {
-    'Not Started':        { bg: '#1F2937',                    text: '#6B7280' },
-    'In Progress':        { bg: 'rgba(30,150,245,0.12)',      text: '#4FB3F6' },
-    'Delivered':          { bg: 'rgba(124,92,232,0.12)',      text: '#7C5CE8' },
-    'Approved':           { bg: 'rgba(0,212,170,0.12)',       text: '#00D4AA' },
-    'Revision Requested': { bg: 'rgba(245,101,101,0.12)',     text: '#FC8181' },
+    'Not Started':        { bg: 'var(--status-not-started-bg)', text: 'var(--status-not-started-text)' },
+    'In Progress':        { bg: 'var(--status-in-progress-bg)', text: 'var(--status-in-progress-text)' },
+    'Delivered':          { bg: 'var(--status-delivered-bg)',   text: 'var(--status-delivered-text)'   },
+    'Approved':           { bg: 'var(--status-approved-bg)',    text: 'var(--status-approved-text)'    },
+    'Revision Requested': { bg: 'var(--status-revision-bg)',    text: 'var(--status-revision-text)'    },
   }
-  return map[status] ?? { bg: '#1F2937', text: '#6B7280' }
+  return map[status] ?? { bg: 'var(--status-not-started-bg)', text: 'var(--status-not-started-text)' }
 }
 
 export function getCaptionStatusColors(status: CaptionStatus): { bg: string; text: string } {
   const map: Record<CaptionStatus, { bg: string; text: string }> = {
-    'Draft':    { bg: '#1F2937',                text: '#6B7280' },
-    'Final':    { bg: 'rgba(30,150,245,0.12)', text: '#4FB3F6' },
-    'Approved': { bg: 'rgba(16,185,129,0.12)', text: '#10B981' },
+    'Draft':    { bg: 'var(--status-draft-bg)',      text: 'var(--status-draft-text)'      },
+    'Final':    { bg: 'var(--status-in-progress-bg)', text: 'var(--status-in-progress-text)' },
+    'Approved': { bg: 'var(--status-approved-bg)',   text: 'var(--status-approved-text)'   },
   }
-  return map[status] ?? { bg: '#1F2937', text: '#6B7280' }
+  return map[status] ?? { bg: 'var(--status-draft-bg)', text: 'var(--status-draft-text)' }
 }
 
 export function getScheduleStatusColors(status: ScheduleStatus): { bg: string; text: string } {
   const map: Record<ScheduleStatus, { bg: string; text: string }> = {
-    'Pending':     { bg: '#1F2937',                text: '#6B7280' },
-    'Scheduled':   { bg: 'rgba(30,150,245,0.12)', text: '#4FB3F6' },
-    'Posted':      { bg: 'rgba(16,185,129,0.12)', text: '#10B981' },
-    'Rescheduled': { bg: 'rgba(245,158,11,0.12)', text: '#F59E0B' },
-    'Cancelled':   { bg: 'rgba(245,101,101,0.12)',text: '#FC8181' },
+    'Pending':     { bg: 'var(--status-pending-bg)',     text: 'var(--status-pending-text)'     },
+    'Scheduled':   { bg: 'var(--status-scheduled-bg)',   text: 'var(--status-scheduled-text)'   },
+    'Posted':      { bg: 'var(--status-posted-bg)',      text: 'var(--status-posted-text)'      },
+    'Rescheduled': { bg: 'var(--status-rescheduled-bg)', text: 'var(--status-rescheduled-text)' },
+    'Cancelled':   { bg: 'var(--status-cancelled-bg)',   text: 'var(--status-cancelled-text)'   },
   }
-  return map[status] ?? { bg: '#1F2937', text: '#6B7280' }
+  return map[status] ?? { bg: 'var(--status-pending-bg)', text: 'var(--status-pending-text)' }
 }

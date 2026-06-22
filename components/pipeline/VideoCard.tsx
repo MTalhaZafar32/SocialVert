@@ -17,10 +17,10 @@ export default function VideoCard({ video }: { video: Video }) {
   )
 
   const recordingStatusColors: Record<string, { bg: string; text: string }> = {
-    'Not Started':       { bg: '#1F2937', text: '#6B7280' },
-    'Awaiting Recording':{ bg: 'rgba(245,158,11,0.12)', text: '#F59E0B' },
-    'In Editing':        { bg: 'rgba(124,92,232,0.12)', text: '#7C5CE8' },
-    'Ready':             { bg: 'rgba(16,185,129,0.12)', text: '#10B981' },
+    'Not Started':        { bg: 'var(--status-not-started-bg)', text: 'var(--status-not-started-text)' },
+    'Awaiting Recording': { bg: 'var(--status-rescheduled-bg)', text: 'var(--status-rescheduled-text)' },
+    'In Editing':         { bg: 'var(--status-delivered-bg)',   text: 'var(--status-delivered-text)'   },
+    'Ready':              { bg: 'var(--status-complete-bg)',    text: 'var(--status-complete-text)'    },
   }
 
   return (
@@ -41,7 +41,7 @@ export default function VideoCard({ video }: { video: Video }) {
       onMouseEnter={e => {
         const el = e.currentTarget
         el.style.borderColor = 'var(--border-default)'
-        el.style.boxShadow = '0 0 0 1px rgba(79,179,246,0.1), 0 4px 16px rgba(0,0,0,0.2)'
+        el.style.boxShadow = 'var(--shadow-card-hover)'
       }}
       onMouseLeave={e => {
         const el = e.currentTarget

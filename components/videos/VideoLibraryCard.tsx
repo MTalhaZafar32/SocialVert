@@ -53,8 +53,8 @@ export default function VideoLibraryCard({ video }: { video: Video }) {
             borderRadius: 999,
             fontSize: 11,
             fontWeight: 500,
-            background: video.videoType === 'Educational' ? 'rgba(30,150,245,0.12)' : 'rgba(124,92,232,0.12)',
-            color: video.videoType === 'Educational' ? '#4FB3F6' : '#7C5CE8',
+            background: video.videoType === 'Educational' ? 'var(--status-in-progress-bg)' : 'var(--status-delivered-bg)',
+            color: video.videoType === 'Educational' ? 'var(--status-in-progress-text)' : 'var(--status-delivered-text)',
           }}
         >
           {video.videoType}
